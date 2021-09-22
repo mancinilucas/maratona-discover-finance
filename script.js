@@ -111,9 +111,13 @@ const DOM = {
 
 const Utils = {
   formatAmount(value) {
-    value = Number(value.replace(/\,\./g, '')) * 100
+    value = value * 100
 
-    return value
+    return Math.round(value)
+    /* PRIMEIRA FORMA COM ERRO
+    value = Number(value.replace(/\,?\.?/g, '')) * 100
+
+    return value */
   },
 
   formatDate(date) {
